@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinhBaoLongSite</title>
+    <link rel="icon" type="image/svg" href="assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <svg class="logo" role="img" aria-label="logo" width="5.5rem" height="5.5rem" viewBox="0 0 627 497" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M437.804 126.204H437.852V126.231L437.973 126.302L437.852 126.511V163.081L437.973 163.291L437.852 163.36V310.815L437.973 310.886L437.852 311.095V311.681L437.973 311.891L437.852 311.966V408.401L596.516 316.798L626.85 369.339L437.973 478.387V478.388L408.732 496.097L377.754 478.024V349.369L254.902 425.831L188.877 385.554L194.683 382.203L188.877 385.48V87.3076L30.335 178.843L0 126.302L218.762 0L218.986 0.388672L219.211 0L437.804 126.204ZM231.985 386.082L254.786 399.99L358.819 335.24L339.474 324.071L231.985 386.082ZM248.975 272.408V350.883L317.471 311.367L249.481 272.114L248.975 272.408ZM344.7 311.218L377.754 330.534L410.808 311.218L377.754 291.9L344.7 311.218ZM269.481 260.568L337.478 299.825L358.154 287.896L290.15 248.635L269.481 260.568ZM310.151 237.088L377.754 276.118V198.058L310.151 237.088ZM215.491 236.955L249.403 256.701L283.315 236.955L249.403 217.208L215.491 236.955ZM269.482 213.607L290.151 225.54L377.754 174.963V161.589L368.668 156.344L269.482 213.607ZM248.975 201.767L249.482 202.061L348.668 144.797L248.975 87.2373V201.767Z"/>
+                </svg>
+                <h2>ThinhBaoLong</h2>
+            </div>
+            <button class="btn" onclick="handleNavbarBtn()">
+                <svg xmlns="http://www.w3.org/2000/svg" height="2.5rem" viewBox="0 -960 960 960" width="2.5rem" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </button>
+            <ul class="links">
+                <li ><a href="#hero" class="active">Trang chủ</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="">
+                    <svg role="img" aria-label="Buy" xmlns="http://www.w3.org/2000/svg" height="3.5rem" viewBox="0 -960 960 960" width="3.5rem" fill="#e3e3e3"><path d="M856-390 570-104q-12 12-27 18t-30 6q-15 0-30-6t-27-18L103-457q-11-11-17-25.5T80-513v-287q0-33 23.5-56.5T160-880h287q16 0 31 6.5t26 17.5l352 353q12 12 17.5 27t5.5 30q0 15-5.5 29.5T856-390ZM513-160l286-286-353-354H160v286l353 354ZM260-640q25 0 42.5-17.5T320-700q0-25-17.5-42.5T260-760q-25 0-42.5 17.5T200-700q0 25 17.5 42.5T260-640Zm220 160Z"/></svg>
+                    <span>Đặt ngay</span>
+                </a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="hero">
+            <p class="eyebrown">THƯƠNG MẠI VẬT LIỆU & XÂY DỰNG</p>
+            <h1>Xây Vững, Dựng Bền</h1>
+            <p class="description">Từ vật tư xây dựng đến thi công trọn gói, Thịnh Bảo Long đồng hành cùng từng công trình bằng sự chính xác và tận tâm.</p>
+            <a href="" class="cta">
+                <svg role="img" aria-label="Buy" xmlns="http://www.w3.org/2000/svg" height="3.5rem" viewBox="0 -960 960 960" width="3.5rem" fill="#e3e3e3"><path d="M856-390 570-104q-12 12-27 18t-30 6q-15 0-30-6t-27-18L103-457q-11-11-17-25.5T80-513v-287q0-33 23.5-56.5T160-880h287q16 0 31 6.5t26 17.5l352 353q12 12 17.5 27t5.5 30q0 15-5.5 29.5T856-390ZM513-160l286-286-353-354H160v286l353 354ZM260-640q25 0 42.5-17.5T320-700q0-25-17.5-42.5T260-760q-25 0-42.5 17.5T200-700q0 25 17.5 42.5T260-640Zm220 160Z"/></svg>
+                <span>Đặt ngay</span>
+            </a>
+            <img class="img--left" src="assets/images/hero_left.webp" alt="tall blue building">
+            <img class="img--right" src="assets/images/hero_right.webp" alt="glass blue building">
+        </section>
+
+        <section id="projects">
+            <h2 class="section__h2">Chúng tôi làm gì?</h2>
+
+            <div class="card-container">
+                <div class="card-item">
+                    <img src="assets/images/demo0.webp" alt="Orange Plaza">
+                    <div class="info-container">
+                        <h3>Orange Plaza</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum veritatis enim maiores eius harum quia rerum, est alias eos in iusto dolorum error, non praesentium unde quae? Consectetur, nesciunt suscipit?</p>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <img src="assets/images/demo1.webp" alt="Hyalus Plaza">
+                    <div class="info-container">
+                        <h3>Hyalus Plaza</h3>
+                        <p>Hyalus Plaza là một trong những dự án tiêu biểu mà chúng tôi thực hiện với định hướng kiến tạo không gian hiện đại, bền vững và tối ưu giá trị vận hành cho chủ đầu tư.
+                            Chúng tôi đã triển khai giải pháp thi công đồng bộ, kiểm soát chất lượng theo từng giai đoạn và hoàn thành đúng thời hạn.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <img src="assets/images/demo2.webp" alt="Blin Tower">
+                    <div class="info-container">
+                        <h3>Blin Tower</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptates ipsam rem quo commodi architecto. Perferendis officiis eum asperiores est cumque, dignissimos explicabo iusto cupiditate dolor quae autem esse neque.</p>
+                    </div>
+                </div>
+                <div class="card-item">
+                    <img src="assets/images/demo3.webp" alt="Lainer Mall">
+                    <div class="info-container">
+                        <h3>Lainer Mall</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, ex nostrum! Optio at totam nesciunt deleniti. Illo, laudantium iure neque, voluptatibus sit doloremque ad tempora velit libero quaerat facere molestias?</p>
+                    </div>
+                </div>
+                <button><img src="assets/icons/back_arrow.svg" alt="back arrow"></button>
+                <button><img src="assets/icons/forward_arrow.svg" alt="forward arrow"></button>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section__h2">Chúng tôi là ai?</h2>
+            <div class="layout__management">
+                <div class="about__container">
+                    <div class="content__container">
+                        <h3>Công Ty Thịnh Bảo Long</h3>
+                        <p>Thịnh Bảo Long được thành lập với sứ mệnh mang đến giải pháp vật liệu và thi công đáng tin cậy cho khách hàng.</p>
+                        <p>Bằng sự tận tâm chúng tôi không ngừng nỗ lực để mỗi công trình đều đạt chất lượng cao nhất, đúng tiến độ và trọn vẹn niềm tin.</p>
+                        <a href="" class="cta">
+                            <svg role="img" aria-label="Buy" xmlns="http://www.w3.org/2000/svg" height="3.5rem" viewBox="0 -960 960 960" width="3.5rem" fill="#e3e3e3"><path d="M856-390 570-104q-12 12-27 18t-30 6q-15 0-30-6t-27-18L103-457q-11-11-17-25.5T80-513v-287q0-33 23.5-56.5T160-880h287q16 0 31 6.5t26 17.5l352 353q12 12 17.5 27t5.5 30q0 15-5.5 29.5T856-390ZM513-160l286-286-353-354H160v286l353 354ZM260-640q25 0 42.5-17.5T320-700q0-25-17.5-42.5T260-760q-25 0-42.5 17.5T200-700q0 25 17.5 42.5T260-640Zm220 160Z"/></svg>
+                            <span>Đặt ngay</span>
+                        </a>
+                    </div>
+                    <div class="img__container">
+                        <div class="container">
+                            <img src="assets/images/selfie.jpg" alt="a young handsome man">
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
+    </main>
+    
+    <footer>
+        <p>random@gmail.com</p>
+        <p>0123-456-789</p>
+        <p>fb: thinhbaolong</p> 
+    </footer>
+</body>
+
+</html>
