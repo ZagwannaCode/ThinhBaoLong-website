@@ -22,3 +22,19 @@ window.addEventListener(`scroll`, () => {
     activeLink.classList.add(`active`);
   });
 });
+
+//Swiper
+import { Swiper } from "./swiper.js";
+
+const config = {
+  minOpacity: 1,
+  maxOpacity: 1,
+  minScale: 0.4,
+  maxScale: 1,
+  minTranslate: 0,
+  maxTranslate: 0,
+  velocityBoost: 36,
+  friction: 3,
+  fisrtIndex: 1,
+};
+const projectsSwiper = new Swiper(document.querySelector("#projects .swiper"),config);

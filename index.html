@@ -6,7 +6,7 @@
     <title>ThinhBaoLongSite</title>
     <link rel="icon" type="image/svg" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -48,40 +48,54 @@
 
         <section id="projects">
             <h2 class="section__h2">Chúng tôi làm gì?</h2>
-
-            <div class="card-container">
-                <div class="card-item">
-                    <img src="assets/images/demo0.webp" alt="Orange Plaza">
-                    <div class="info-container">
-                        <h3>Orange Plaza</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum veritatis enim maiores eius harum quia rerum, est alias eos in iusto dolorum error, non praesentium unde quae? Consectetur, nesciunt suscipit?</p>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <img src="assets/images/demo1.webp" alt="Hyalus Plaza">
-                    <div class="info-container">
-                        <h3>Hyalus Plaza</h3>
-                        <p>Hyalus Plaza là một trong những dự án tiêu biểu mà chúng tôi thực hiện với định hướng kiến tạo không gian hiện đại, bền vững và tối ưu giá trị vận hành cho chủ đầu tư.
-                            Chúng tôi đã triển khai giải pháp thi công đồng bộ, kiểm soát chất lượng theo từng giai đoạn và hoàn thành đúng thời hạn.
-                        </p>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <img src="assets/images/demo2.webp" alt="Blin Tower">
-                    <div class="info-container">
-                        <h3>Blin Tower</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptates ipsam rem quo commodi architecto. Perferendis officiis eum asperiores est cumque, dignissimos explicabo iusto cupiditate dolor quae autem esse neque.</p>
-                    </div>
-                </div>
-                <div class="card-item">
-                    <img src="assets/images/demo3.webp" alt="Lainer Mall">
-                    <div class="info-container">
-                        <h3>Lainer Mall</h3>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, ex nostrum! Optio at totam nesciunt deleniti. Illo, laudantium iure neque, voluptatibus sit doloremque ad tempora velit libero quaerat facere molestias?</p>
-                    </div>
-                </div>
-                <button><img src="assets/icons/back_arrow.svg" alt="back arrow"></button>
-                <button><img src="assets/icons/forward_arrow.svg" alt="forward arrow"></button>
+            <div class="swiper">
+                <ul class="container">
+                    <li class="card">
+                        <div class="content">
+                            <img src="assets/images/demo0.webp" alt="Orange Plaza">
+                            <div class="info-container">
+                                <h3>Orange Plaza</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum veritatis enim maiores eius harum quia rerum, est alias eos in iusto dolorum error, non praesentium unde quae? Consectetur, nesciunt suscipit?</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="content">
+                            <img src="assets/images/demo1.webp" alt="Hyalus Plaza">
+                            <div class="info-container">
+                                <h3>Hyalus Plaza</h3>
+                                <p>Hyalus Plaza là một trong những dự án tiêu biểu mà chúng tôi thực hiện với định hướng kiến tạo không gian hiện đại, bền vững và tối ưu giá trị vận hành cho chủ đầu tư.
+                                    Chúng tôi đã triển khai giải pháp thi công đồng bộ, kiểm soát chất lượng theo từng giai đoạn và hoàn thành đúng thời hạn.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="content">
+                            <img src="assets/images/demo2.webp" alt="Blin Tower">
+                            <div class="info-container">
+                                <h3>Blin Tower</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptates ipsam rem quo commodi architecto. Perferendis officiis eum asperiores est cumque, dignissimos explicabo iusto cupiditate dolor quae autem esse neque.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="content">
+                            <img src="assets/images/demo3.webp" alt="Lainer Mall">
+                            <div class="info-container">
+                                <h3>Lainer Mall</h3>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto, ex nostrum! Optio at totam nesciunt deleniti. Illo, laudantium iure neque, voluptatibus sit doloremque ad tempora velit libero quaerat facere molestias?</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="pagination"></div>
+                <button class="btn back">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
+                </button>
+                <button class="btn forward">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+                </button>
             </div>
         </section>
 

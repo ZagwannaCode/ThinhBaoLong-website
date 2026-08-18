@@ -178,8 +178,8 @@
         &::before {
             content: "";
             position: absolute;
-            top: calc(-.5em - 2px);
-            left: -62px;
+            top: calc(-.5em - 3px);
+            left: -63px;
             z-index: -1;
             width: 100vw;
             height: 1em;
@@ -480,10 +480,111 @@
         }
     }}
 @layer projects_section {
-    .card-container {
-        margin-top: 30px;
-        border: 1px solid black;
+#projects {
+    p {
+        font-size: var(--fs-20);
     }
+    .swiper {
+        background-color: var(--c-light-cream);
+        outline: 6px solid var(--c-brown);
+        padding: 20px;
+        margin: 30px auto;
+        /* --needed-- */
+        position: relative;
+        width: 80vw;
+        touch-action: pan-y;
+        overflow-x: hidden;
+    }
+    .swiper .container {
+        transition: .2s ease-out;
+        /* padding: 20px; */
+        display: flex;
+        gap: 10px;
+        width: max-content;
+    }
+    .swiper .container .card {
+        background-color: var(--c-cream);
+        padding: 16px;
+        border: 6px solid var(--c-brown);
+        box-shadow: 4px 4px var(--c-light-brown);
+        transition: .2s ease-out;
+    }
+    .swiper .container .card .content {
+        color: rgb(201, 225, 241);
+        width: min(360px, calc(80vw - 20px));
+
+        pointer-events: none;
+        user-select: none;
+    }
+    .swiper .btn {
+        border: 3px solid var(--c-light-brown);
+        background-color: var(--c-light-cream);
+        box-shadow: 3px 3px var(--c-brown);
+
+        position: absolute;
+        bottom: 50%;
+        user-select: none;
+        transition: .03s ease-out;
+
+        width: 45px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        >svg {
+            fill: var(--c-brown);
+            scale: 1.2;
+        }
+        &.back {
+            >svg {
+                translate: 3px 0;
+            }
+            left: 6px;
+        }
+        &.forward {
+            right: 6px;
+        }
+
+        &:hover {
+            background-color: var(--c-cream);
+        }
+        &:active {
+            background-color: var(--c-lighter-brown);
+            box-shadow: none;
+            translate: 3px 3px;
+        }
+
+        @media (width <= 600px) {
+            bottom: 6px;
+        }
+    }
+    .swiper .btn.disabled {
+        pointer-events: none;
+
+        background-color: var(--c-lighter-brown);
+        box-shadow: none;
+        translate: 3px 3px;
+        opacity: .8;
+    }
+    .swiper .container, .swiper .container .card {
+        &.isDragging {
+            transition: none;
+        }
+    }
+
+    .swiper .content {
+        img {
+            outline: 3px solid var(--c-brown);
+        }
+        h3 {
+            color: var(--c-brown);
+            margin-bottom: .3em;
+        }
+        p {
+            color: var(--c-light-brown);
+        }
+    }
+}
 }
 @layer about_section {
     #about {
