@@ -30,6 +30,8 @@ export class Swiper {
       step: 0,
       startPosition: 0,
       startIndex: 0,
+      paginationWidth: 0,
+      paginationStep: 0,
     };
 
     this.state = {
@@ -53,6 +55,8 @@ export class Swiper {
     this.bindEvents();
     this.takeMeasurements();
     this.setInitialIndex(this.config.fisrtIndex);
+    this.setupPagination();
+    this.render();
   }
 
   cacheDOM() {
@@ -60,6 +64,7 @@ export class Swiper {
     this.cards = [...this.element.querySelectorAll(".container .card")];
     this.btnBack = this.element.querySelector(".btn.back");
     this.btnForward = this.element.querySelector(".btn.forward");
+    this.pagination = this.element.querySelector(".pagination");
   }
   bindEvents() {
     this.handlePointerup = this.handlePointerup.bind(this);
@@ -80,6 +85,7 @@ export class Swiper {
     const cardRect = this.cards[0].getBoundingClientRect();
     const swiperStyle = getComputedStyle(this.element);
     const containerStyle = getComputedStyle(this.container);
+    const paginationRect = this.pagination.getBoundingClientRect();
 
     this.measurements.swiperPadding = parseFloat(swiperStyle.paddingLeft);
     this.measurements.swiperCenter = swiperRect.width / 2;
@@ -88,6 +94,8 @@ export class Swiper {
     this.measurements.containerGap = parseFloat(containerStyle.columnGap);
     this.measurements.containerPadding = parseFloat(containerStyle.padding);
     this.measurements.step = this.measurements.cardWidth + this.measurements.containerGap;
+    this.measurements.paginationWidth = paginationRect.width;
+    this.measurements.paginationStep = paginationRect.width / 2 - 8;
   }
   setInitialIndex(startIndex) {
     this.state.activeIndex = startIndex;
@@ -99,7 +107,14 @@ export class Swiper {
     let step = this.measurements.step;
 
     this.measurements.startPosition = sCenter - sPadding - cPadding - cWidth/2 - startIndex * step
-    this.render();
+  }
+  setupPagination() {
+    for(let i = 0; i < this.measurements.cardCount; i++) {
+      const dot = document.createElement("div");
+      dot.classList.add("pagination-dot");
+      this.pagination.append(dot);
+    }
+    this.paginationDot = [...this.element.querySelectorAll(".pagination .pagination-dot")];
   }
 
   //2.Input
@@ -133,6 +148,7 @@ export class Swiper {
       this.state.firstTimeStamp = e.timeStamp;
       this.element.setPointerCapture(e.pointerId);
       this.toggleTransitionStyle();
+      this.togglePaginationTransitionStyle();
     }
   }
   handlePointermove(e) {
@@ -173,6 +189,7 @@ export class Swiper {
       this.render();
     }
     this.toggleTransitionStyle();
+    this.togglePaginationTransitionStyle();
     this.handleSnapping();
   }
   handleSnapping() {
@@ -185,6 +202,7 @@ export class Swiper {
     this.renderContainer();
     this.renderCards();
     this.renderBtn();
+    this.renderPagination();
   }
   renderContainer() {
     this.container.style.translate = `${this.state.position + this.measurements.startPosition}px 0px`
@@ -215,6 +233,17 @@ export class Swiper {
       this.btnForward.classList.add("disabled");
     }
   }
+  renderPagination() {
+    for(let i = 0; i < this.measurements.cardCount; i++) {
+      let k = this.state.position / this.measurements.step;
+      let pos = k * this.measurements.paginationStep;                   
+      
+      //Fix this bug: need position
+      this.paginationDot[i].style.translate = `${pos}px 0px`;
+      this.paginationDot[i].classList.remove("active");
+    }
+    this.paginationDot[this.state.activeIndex].classList.add("active");
+  }
 
   //Helper functions
   getCardDistanceFromCenter(index) {
@@ -226,5 +255,8 @@ export class Swiper {
   toggleTransitionStyle() {
     this.container.classList.toggle("isDragging");
     this.cards.forEach(card => card.classList.toggle("isDragging"));
+  }
+  togglePaginationTransitionStyle() {
+    this.paginationDot.forEach(dot => dot.classList.toggle("isDragging"));
   }
 }
