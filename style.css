@@ -151,7 +151,7 @@
 
     header {
         position: fixed;
-        width: 100vw;
+        width: 100%;
         padding: 20px 60px;
         top: 0px;
         left: 0px;
@@ -487,17 +487,15 @@
     .swiper {
         background-color: var(--c-light-cream);
         outline: 6px solid var(--c-brown);
-        padding: 20px;
-        margin: 30px auto;
-        /* --needed-- */
+        padding: 10px;
+        margin: 70px auto 50px auto;
         position: relative;
         width: 80vw;
         touch-action: pan-y;
-        overflow-x: hidden;
+        overflow-x: clip;
     }
     .swiper .container {
         transition: .2s ease-out;
-        /* padding: 20px; */
         display: flex;
         gap: 10px;
         width: max-content;
