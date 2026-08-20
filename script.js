@@ -4,6 +4,7 @@ const navbarUl = document.querySelector(`.navbar .links`);
 const navbarLinks = document.querySelectorAll(`.navbar .links a`);
 const sections = document.querySelectorAll(`section`);
 
+navbarBtn.addEventListener("click", handleNavbarBtn);
 function handleNavbarBtn() {
   navbarUl.classList.toggle("opened");
   navbarBtn.classList.toggle("opened");
