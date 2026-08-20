@@ -224,7 +224,13 @@
                 translate: 4px 4px;
                 box-shadow: none;
             }
-        }}
+        }
+    .links a:focus-visible, .cta:focus-visible, .btn:focus-visible {
+        outline: 3px solid var(--c-brown);
+        translate: -1px -1px;
+        scale: 1.1;
+        box-shadow: 6px 6px var(--c-brown);
+}}
 @layer global_scroll_animation {
     @keyframes fade-in {
         from {translate: 0 100px; opacity: 0; scale: .85;}
@@ -285,7 +291,7 @@
       fill: var(--c-brown);
     }
 
-    h2 {
+    .logo-container span {
       font-size: var(--fs-32);
       margin-left: 0;
       color: var(--c-brown);
@@ -551,6 +557,7 @@
         border: 3px solid var(--c-light-brown);
         background-color: var(--c-light-cream);
         box-shadow: 3px 3px var(--c-brown);
+        cursor: pointer;
 
         position: absolute;
         bottom: 50%;
@@ -590,6 +597,7 @@
         }
     }
     .swiper .btn.disabled {
+        cursor: default;
         pointer-events: none;
 
         background-color: var(--c-lighter-brown);
@@ -761,6 +769,7 @@
         }
 
         * {
+            color: #3F1D06;
             border: 4px solid var(--c-light-brown);
             background-color: var(--c-light-cream);
             z-index: 1;

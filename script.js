@@ -6,8 +6,12 @@ const sections = document.querySelectorAll(`section`);
 
 navbarBtn.addEventListener("click", handleNavbarBtn);
 function handleNavbarBtn() {
+  const isExpanded = navbarBtn.getAttribute("aria-expanded") === "true";
+  
   navbarUl.classList.toggle("opened");
   navbarBtn.classList.toggle("opened");
+  navbarBtn.setAttribute("aria-expanded", !isExpanded);
+
 }
 
 window.addEventListener(`scroll`, () => {

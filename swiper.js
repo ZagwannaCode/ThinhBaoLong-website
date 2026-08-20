@@ -106,7 +106,7 @@ export class Swiper {
     let cWidth = this.measurements.cardWidth;
     let step = this.measurements.step;
 
-    this.measurements.startPosition = sCenter - sPadding - cPadding - cWidth/2 - startIndex * step
+    this.measurements.startPosition = sCenter - sPadding - cPadding - cWidth/2 - startIndex * step;
   }
   setupPagination() {
     for(let i = 0; i < this.measurements.cardCount; i++) {
@@ -226,11 +226,16 @@ export class Swiper {
     this.btnBack.classList.remove("disabled");
     this.btnForward.classList.remove("disabled");
 
+    this.btnBack.disabled = false;
+    this.btnForward.disabled = false;
+
     if(this.state.activeIndex <= 0) {
       this.btnBack.classList.add("disabled");
+      this.btnBack.disabled = true;
     }
     if(this.state.activeIndex >= this.measurements.cardCount-1) {
       this.btnForward.classList.add("disabled");
+      this.btnForward.disabled = true;
     }
   }
   renderPagination() {
